@@ -20,6 +20,8 @@ exports.createFriend = async (req, res) => {
 
 
 
+
+
   exports.getAllFriends = async (req , res) => {
       try{   let friends = await Friend.find();
         res.status(200).json({
@@ -60,7 +62,7 @@ exports.updateOneFriend = async (req , res) => {
     });
     res.status(200).json({
         status: "Success",
-        data: {friend: friend , message: "Friend Find by Id Successfully"},
+        data: {friend: friend , message: "Friend update by Id Successfully"},
     });} 
     catch(err){
         let doc = await Friend.findByIdAndUpdate(req.params.id , req.body,{
